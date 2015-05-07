@@ -37,10 +37,10 @@
 			<div class="collapse navbar-collapse" id="navloginform">
 				<form class="navbar-form navbar-right" id="login-form">
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="E-mail">
+						<input type="email" name="login_email" class="form-control" placeholder="E-mail">
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Password">
+						<input type="password" name="login_password" class="form-control" placeholder="Password">
 					</div>
 					<button type="submit" class="btn btn-success">Log In</button>
 				</form>
@@ -63,15 +63,15 @@
 			<form id="signup-form">
 				<div class="form-group">
 					<label for="signup-email">Email Address</label>
-					<input type="email" class="form-control" placeholder="Your email">
+					<input type="email" name="signup_email" class="form-control" placeholder="Your email">
 				</div>
 
 				<div class="form-group">
 					<label for="signup-email">Password</label>
-					<input type="email" class="form-control" placeholder="Password">
+					<input type="password" name="signup_password" class="form-control" placeholder="Password">
 				</div>
 
-				<button type="submit" class="btn btn-success btn-lg">Sign Up</button>
+				<button type="submit" name="signup_submit" class="btn btn-success btn-lg">Sign Up</button>
 			</form>
 		</div>
 	</div>
