@@ -42,7 +42,7 @@
 					<div class="form-group">
 						<input type="password" name="login_password" class="form-control" placeholder="Password">
 					</div>
-					<button type="submit" class="btn btn-success">Log In</button>
+					<input type="submit" class="btn btn-success" value="Log In">
 				</form>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -71,7 +71,7 @@
 					<input type="password" name="signup_password" class="form-control" placeholder="Password">
 				</div>
 
-				<button type="submit" name="signup_submit" class="btn btn-success btn-lg">Sign Up</button>
+				<input type="submit" name="signup_submit" class="btn btn-success btn-lg" value="Sign Up">
 			</form>
 		</div>
 	</div>
