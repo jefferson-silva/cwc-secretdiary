@@ -1,8 +1,31 @@
 <?php
 	include("connection.php");
 
+	session_start();
+
 	if (isset($_POST['login_submit'])) {
-		# code...
+			# check if email is registered and md5 of password is equal to the registered
+				# redirect to mainpage.php
+
+		$email = $_POST['login_email'];
+		$password = $_POST['login_password'];
+
+		if ($email == "" or
+			!filter_var($email, FILTER_VALIDATE_EMAIL) or
+			$password == "") {
+			$errors = "E-mail and/or password incorrect!";
+		} else {
+			$password = md5($password);
+
+			$query = "SELECT id, password FROM users WHERE email='" . mysqli_real_escape_string($connection, $email) . "'";
+			$result = mysqli_query($connection, $query);
+
+			if ($row = mysqli_fetch_array ($result)) {
+				if ($row['password'] == $password) {
+					$success = "You are logged in!";
+				}
+			}
+		}
 	}
 
 	if (isset($_POST['signup_submit'])) {
@@ -55,10 +78,5 @@
 				}
 			}
 		}
-
-		
-
-		# if everything is ok then check if email is not already being used
-		# if email is available register email and the md5 of the password in the database
 	}
 ?>

@@ -83,7 +83,7 @@
 			<form id="signup-form" method="post">
 				<div class="form-group">
 					<label for="signup-email">Email Address</label>
-					<input type="text" name="signup_email" class="form-control" placeholder="Your email">
+					<input type="email" name="signup_email" class="form-control" placeholder="Your email">
 				</div>
 
 				<div class="form-group">
