@@ -1,3 +1,7 @@
+<?php
+	include("login.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,14 +39,14 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navloginform">
-				<form class="navbar-form navbar-right" id="login-form">
+				<form class="navbar-form navbar-right" id="login-form" method="post">
 					<div class="form-group">
 						<input type="email" name="login_email" class="form-control" placeholder="E-mail">
 					</div>
 					<div class="form-group">
 						<input type="password" name="login_password" class="form-control" placeholder="Password">
 					</div>
-					<input type="submit" class="btn btn-success" value="Log In">
+					<input type="submit" class="btn btn-success" name="login_submit" value="Log In">
 				</form>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -60,10 +64,26 @@
 
 	<div class="row text-center">
 		<div class="col-sm-6 col-sm-offset-3">
-			<form id="signup-form">
+			<div class="alert alert-danger" id="error">
+				
+			</div>
+
+			<?php
+				if (isset($errors) and $errors != "") {
+					echo "<div class=\"alert alert-danger\">";
+					echo $errors;
+					echo "</div>";
+				} else if (isset($success)) {
+					echo "<div class=\"alert alert-success\">";
+					echo $success;
+					echo "</div>";
+				}
+			?>
+
+			<form id="signup-form" method="post">
 				<div class="form-group">
 					<label for="signup-email">Email Address</label>
-					<input type="email" name="signup_email" class="form-control" placeholder="Your email">
+					<input type="text" name="signup_email" class="form-control" placeholder="Your email">
 				</div>
 
 				<div class="form-group">
