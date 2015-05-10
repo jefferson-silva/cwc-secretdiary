@@ -54,7 +54,7 @@
 
 			} else {
 
-				if ($password == "" or strlen($password) < 8) {
+				if ($password == "" or strlen($password) < 6) {
 					$errors .= "Password must have at least 8 characters.<br>";
 				}
 
