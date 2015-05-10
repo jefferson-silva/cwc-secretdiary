@@ -48,7 +48,15 @@
 			<div class="collapse navbar-collapse" id="navloginform">
 				<form class="navbar-form navbar-right" id="login-form" method="post">
 					<div class="form-group">
-						<input type="email" name="login_email" class="form-control" placeholder="E-mail">
+						<?php
+							if (isset ($_POST["login_email"])) {
+								$email = $_POST["login_email"];
+							} else {
+								$email = "";
+							}
+						?>
+
+						<input type="email" name="login_email" class="form-control" placeholder="E-mail" value="<?php echo $email; ?>">
 					</div>
 					<div class="form-group">
 						<input type="password" name="login_password" class="form-control" placeholder="Password">
