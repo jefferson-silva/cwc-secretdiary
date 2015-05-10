@@ -76,7 +76,7 @@
 		$(".diary-container").css("min-height", $(window).height() - 100);
 		$("#diary").css("height", $(window).height() - 100);
 
-		$("#diary").change(function (data) {
+		$("#diary").keyup(function () {
 			$.post("updatediary.php", {"diary": $("#diary").val()});
 		});
 	</script>
