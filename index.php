@@ -1,4 +1,11 @@
 <?php
+	if (isset ($_GET["logout"]) and $_GET["logout"] == 1) {
+		session_start ();
+		session_destroy ();
+		unset ($_SESSION);
+	}
+	
+
 	include("login.php");
 ?>
 
