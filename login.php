@@ -26,6 +26,8 @@
 					header ("location: diary.php");
 				}
 			}
+
+			$errors = "E-mail and/or password incorrect!";
 		}
 	}
 
