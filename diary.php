@@ -1,3 +1,13 @@
+<?php
+	include ("connection.php");
+
+	session_start ();
+
+	if (!isset($_SESSION["id"])) {
+		header ("location: index.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +51,16 @@
 	<div class="container-fluid diary-container">
 		<div class="row text-center">
 			<div class="col-sm-10 col-sm-offset-1">
-				
-				<textarea name="diary" id="diary" class="form-control" cols="30" rows="10"></textarea>
+
+				<?php
+						$id = $_SESSION["id"];
+						$query = "SELECT diary FROM users WHERE id='{$id}'";
+
+						$result = mysqli_fetch_array (mysqli_query ($connection, $query));
+				?>				
+
+
+				<textarea name="diary" id="diary" class="form-control" cols="30" rows="10"><?php echo $result["diary"]; ?></textarea>
 
 			</div>
 		</div>
@@ -57,6 +75,10 @@
 	<script>
 		$(".diary-container").css("min-height", $(window).height() - 100);
 		$("#diary").css("height", $(window).height() - 100);
+
+		$("#diary").change(function (data) {
+			$.post("updatediary.php", {"diary": $("#diary").val()});
+		});
 	</script>
 </body>
 </html>

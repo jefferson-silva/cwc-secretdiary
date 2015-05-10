@@ -3,7 +3,7 @@
 
 	session_start ();
 
-	if (isset($_SESSION["id"]) and isset($_POST["update"])) {
+	if (isset($_SESSION["id"])) {
 
 		$diary = mysqli_real_escape_string ($connection, $_POST["diary"]);
 		$id = $_SESSION["id"];

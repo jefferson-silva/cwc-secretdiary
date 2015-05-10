@@ -22,7 +22,8 @@
 
 			if ($row = mysqli_fetch_array ($result)) {
 				if ($row['password'] == $password) {
-					$success = "You are logged in!";
+					$_SESSION["id"] = $row["id"];
+					header ("location: diary.php");
 				}
 			}
 		}
@@ -70,7 +71,8 @@
 
 					if (mysqli_query ($connection, $query)) {
 
-						$success = "Congratulations! You are signed up.";
+						$_SESSION["id"] = mysqli_insert_id ($connection);
+						header ("location: diary.php");
 
 					} else {
 						$errors = "Ocorreu um erro: " . mysqli_error($connection);
