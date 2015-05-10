@@ -40,7 +40,7 @@
 			<div class="pull-right">
 				<ul class="navbar-nav nav">
 					<li>
-						<a href="#">Log Out</a>
+						<a href="logout.php">Log Out</a>
 					</li>
 				</ul>
 			</div>
