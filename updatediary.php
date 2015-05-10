@@ -12,5 +12,7 @@
 
 		mysqli_query ($connection, $query);
 
+	} else {
+		header ("location: index.php");
 	}
 ?>
