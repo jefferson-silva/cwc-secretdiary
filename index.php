@@ -3,6 +3,8 @@
 		session_start ();
 		session_destroy ();
 		unset ($_SESSION);
+
+		$success = "You have been logged out. Have a nice day!";
 	}
 	
 
